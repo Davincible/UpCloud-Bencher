@@ -29,6 +29,10 @@ to the remote server.
 SSH_KEY=~/.ssh/id_upcloud ./main.sh
 ```
 
+Wait 10-15min for the script to run the benchmark on all the servers. After the 
+benchmark is done the server will be automatically deleted. The newly pulled
+graphs can now be viewed in the `graphs` directory.
+
 ### Graphs
 
 Graphs can be found in the `graphs` directory.
