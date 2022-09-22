@@ -13,7 +13,7 @@ for device in $(find /dev -name 'vd[b-z]'); do
 	DEVICE_SHORT=$(echo $device | cut -c 6-)
 	DIR="/mnt/${DEVICE_SHORT}"
 	BENCH_FILE="bench"
-	FIO_OUTPUT="/root/fio-output"
+	FIO_OUTPUT="/${HOME}/fio-output"
 
 	mkfs.xfs $device
 	mkdir -p $DIR
@@ -36,7 +36,7 @@ for device in $(find /dev -name 'vd[b-z]'); do
 	fio-plot -i ${FIO_OUTPUT}/${BENCH_FILE}/randrw50/4k \
 		-T "$HOSTNAME $device" \
 		-r randrw -g -t bw -d 8 16 -n 8 \
-		-o "/root/${HOSTNAME}-${DEVICE_SHORT}.png"
+		-o "/${HOME}/${HOSTNAME}-${DEVICE_SHORT}.png"
 
 	rm -rf $FIO_OUTPUT
 done

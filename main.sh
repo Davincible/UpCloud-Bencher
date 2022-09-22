@@ -20,7 +20,7 @@ us-sjo1
 OS="01000000-0000-4000-8000-000150010100"
 GRAPHS_DIR="$(date -I)-$(date +%s)"
 DISK_SIZE="10"
-DISK_TYPE="maxiops" # or hdd
+DISK_TYPE="maxiops" # maxiops or hdd
 PLAN="2xCPU-4GB"
 REGIONS="
 us-sjo1
