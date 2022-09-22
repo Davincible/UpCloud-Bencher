@@ -1,18 +1,20 @@
 #!/bin/bash
 
-# All Regions
-# au-syd1
-# de-fra1
-# es-mad1
-# fi-hel1
-# fi-hel2
-# nl-ams1
-# pl-waw1
-# sg-sin1
-# uk-lon1
-# us-chi1
-# us-nyc1
-# us-sjo1
+# List of all regions to copy from
+ALL_REGIONS="
+au-syd1
+de-fra1
+es-mad1
+fi-hel1
+fi-hel2
+nl-ams1
+pl-waw1
+sg-sin1
+uk-lon1
+us-chi1
+us-nyc1
+us-sjo1
+"
 
 # Rocky Linux 8
 OS="01000000-0000-4000-8000-000150010100"
