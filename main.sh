@@ -18,6 +18,7 @@
 OS="01000000-0000-4000-8000-000150010100"
 GRAPHS_DIR="$(date -I)-$(date +%s)"
 DISK_SIZE="10"
+DISK_TYPE="maxiops" # or hdd
 PLAN="2xCPU-4GB"
 REGIONS="
 us-sjo1
@@ -39,9 +40,9 @@ function run_benchmark() {
     --hostname $HOSTNAME \
     --os $OS \
     --plan $PLAN \
-    --storage "action=create,address=virtio,title=${1}-disk-1,size=$DISK_SIZE,tier=maxiops,type=disk" \
-    --storage "action=create,address=virtio,title=${1}-disk-2,size=$DISK_SIZE,tier=maxiops,type=disk" \
-    --storage "action=create,address=virtio,title=${1}-disk-3,size=$DISK_SIZE,tier=maxiops,type=disk" \
+    --storage "action=create,address=virtio,title=${1}-disk-1,size=$DISK_SIZE,tier=${DISK_TYPE},type=disk" \
+    --storage "action=create,address=virtio,title=${1}-disk-2,size=$DISK_SIZE,tier=${DISK_TYPE},type=disk" \
+    --storage "action=create,address=virtio,title=${1}-disk-3,size=$DISK_SIZE,tier=${DISK_TYPE},type=disk" \
     --ssh-keys "${SSH_KEY}.pub" \
     -ojson \
     --wait | jq -r '.ip_addresses[] | select(.access | match("public")) | select(.family | match("IPv4")).address')
