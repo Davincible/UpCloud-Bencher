@@ -20,10 +20,10 @@ GRAPHS_DIR="$(date -I)-$(date +%s)"
 DISK_SIZE="10"
 PLAN="2xCPU-4GB"
 REGIONS="
-us-nyc1
-nl-ams1
-us-chi1
-pl-waw1
+us-sjo1
+de-fra1
+fi-hel1
+fi-hel2
 "
 
 if [ ${#SSH_KEY} -eq 0 ]; then
